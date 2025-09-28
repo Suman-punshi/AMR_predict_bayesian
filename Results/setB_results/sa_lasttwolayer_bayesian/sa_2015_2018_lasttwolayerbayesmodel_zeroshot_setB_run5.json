@@ -6236,11 +6236,11 @@
                 "variance_of_variance": 0.0001941224472830072,
                 "tp_mean_uncertainty": 0.058127474039793015,
                 "tn_mean_uncertainty": 0.00921375397592783,
-                "fp_mean_uncertainty": NaN,
+                "fp_mean_uncertainty": -1,
                 "fn_mean_uncertainty": 0.016206715255975723,
                 "tp_std_uncertainty": 0.0060293711721897125,
                 "tn_std_uncertainty": 0.01309587899595499,
-                "fp_std_uncertainty": NaN,
+                "fp_std_uncertainty": -1,
                 "fn_std_uncertainty": 0.01766807772219181
             }
         },

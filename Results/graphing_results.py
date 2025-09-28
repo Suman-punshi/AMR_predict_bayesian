@@ -222,3 +222,84 @@ plot_uncertainty_distributions("Results/SetA_results/ec_lasttwolayer_bayesian/ec
 plot_uncertainty_distributions("Results/SetA_results/Kp_lasttwolayer_bayesian/kp_2015_2018_lasttwolayerbayes_seta_run5.json", specie = "K. pneumoniae", output_dir="Results/SetA_results/uncertainty_plots")
 
 plot_uncertainty_distributions("Results/SetA_results/sa_lasttwolayer_bayesian/sa_2015_2018_lasttwolayerbayes_seta_run5.json", specie = "S. aureus",output_dir="Results/SetA_results/uncertainty_plots")
+
+
+# set B
+avg_file = "Results/SetB_results/ec_lasttwolayer_bayesian/combined_metrics.json"
+eval_log_files = ["Results/setB_results/ec_detlogs/ecoli_2015_2018_detmodel_zeroshot_setB.json"]
+plot_comparative_histograms(avg_file, eval_log_files, ["Last two Layer Bayesian", "Deterministic"], specie = "E. coli", output_dir="Results/SetB_results/figures")
+
+avg_file = "Results/SetB_results/kp_lasttwolayer_bayesian/combined_metrics.json"
+eval_log_files = ["Results/setB_results/kp_detlogs/kp_2015_2018_detmodel_zeroshot_setB.json"]
+plot_comparative_histograms(avg_file, eval_log_files, ["Last two Layer Bayesian", "Deterministic"], specie = "K. pneumoniae", output_dir="Results/SetB_results/figures")
+
+avg_file = "Results/SetB_results/sa_lasttwolayer_bayesian/combined_metrics.json"
+eval_log_files = ["Results/setB_results/sa_detlogs/sa_2015_2018_detmodel_zeroshot_setB.json"]
+plot_comparative_histograms(avg_file, eval_log_files, ["Last two Layer Bayesian", "Deterministic"], specie = "S. aureus", output_dir="Results/SetB_results/figures")
+
+
+plot_uncertainty_distributions("Results/setB_results/ec_lasttwolayer_bayesian\ecoli_2015_2018_lasttwolayerbayesmodel_zeroshot_setB_run5.json", specie = "E. coli", output_dir="Results/SetB_results/uncertainty_plots")
+
+plot_uncertainty_distributions("Results/setB_results/kp_lasttwolayer_bayesian/kp_2015_2018_lasttwolayerbayesmodel_zeroshot_setB_run5.json", specie = "K. pneumoniae", output_dir="Results/SetB_results/uncertainty_plots")
+
+plot_uncertainty_distributions("Results/setB_results/sa_lasttwolayer_bayesian/sa_2015_2018_lasttwolayerbayesmodel_zeroshot_setB_run5.json", specie = "S. aureus",output_dir="Results/SetB_results/uncertainty_plots")
+
+
+# set c
+avg_file = "Results/SetC_results/ec_lasttwolayer_bayesian/combined_metrics.json"
+eval_log_files = ["Results/setC_results/ec_detlogs/ecoli_2015_2018_detmodel_finetuned_setc.json"]
+plot_comparative_histograms(avg_file, eval_log_files, ["Last two Layer Bayesian", "Deterministic"], specie = "E. coli", output_dir="Results/SetC_results/figures")
+
+avg_file = "Results/SetC_results/sa_lasttwolayer_bayesian/combined_metrics.json"
+eval_log_files = ["Results/setC_results/sa_detlogs/sa_2015_2018_detmodel_finetuned_setc.json"]
+plot_comparative_histograms(avg_file, eval_log_files, ["Last two Layer Bayesian", "Deterministic"], specie = "S. aureus", output_dir="Results/SetC_results/figures")
+
+
+plot_uncertainty_distributions("Results/setC_results/ec_lasttwolayer_bayesian/ecoli_2015_2018_lasttwolayerbayes_setc_finetuned_run5.json", specie = "E. coli", output_dir="Results/SetC_results/uncertainty_plots")
+
+plot_uncertainty_distributions("Results/setC_results/sa_lasttwolayer_bayesian/sa_2015_2018_lasttwolayerbayes_setc_finetuned_run5.json", specie = "S. aureus",output_dir="Results/SetC_results/uncertainty_plots")
+
+
+
+# set d
+avg_file = "Results/SetD_results/ec_lasttwolayer_bayesian/combined_metrics.json"
+eval_log_files = ["Results/setD_results/ec_detlogs/ecoli_2015_2018_detmodel_finetuned_setd.json"]
+plot_comparative_histograms(avg_file, eval_log_files, ["Last two Layer Bayesian", "Deterministic"], specie = "E. coli", output_dir="Results/SetD_results/figures")
+
+avg_file = "Results/SetD_results/kp_lasttwolayer_bayesian/combined_metrics.json"
+eval_log_files = ["Results/setD_results/kp_detlogs/kp_2015_2018_detmodel_finetuned_setD.json"]
+plot_comparative_histograms(avg_file, eval_log_files, ["Last two Layer Bayesian", "Deterministic"], specie = "K. pneumoniae", output_dir="Results/SetD_results/figures")
+
+avg_file = "Results/SetD_results/sa_lasttwolayer_bayesian/combined_metrics.json"
+eval_log_files = ["Results/setD_results/sa_detlogs/sa_2015_2018_detmodel_zeroshot_setD.json"]
+plot_comparative_histograms(avg_file, eval_log_files, ["Last two Layer Bayesian", "Deterministic"], specie = "S. aureus", output_dir="Results/SetD_results/figures")
+
+
+plot_uncertainty_distributions("Results/setD_results/ec_lasttwolayer_bayesian/ecoli_2015_2018_lasttwolayerbayes_setd_finetuned_run5.json", specie = "E. coli", output_dir="Results/SetD_results/uncertainty_plots")
+
+plot_uncertainty_distributions("Results/setD_results/kp_lasttwolayer_bayesian/kp_2015_2018_lasttwolayerbayes_setD_finetuned_run5.json", specie = "K. pneumoniae", output_dir="Results/SetD_results/uncertainty_plots")
+
+plot_uncertainty_distributions("Results/setD_results/sa_lasttwolayer_bayesian/sa_2015_2018_lasttwolayerbayesmodel_zeroshot_setD_run5.json", specie = "S. aureus",output_dir="Results/SetD_results/uncertainty_plots")
+
+
+# UMG
+avg_file = "Results/UMG_results/ec_lasttwolayer_bayesian/combined_metrics.json"
+eval_log_files = ["Results/UMG_results/ec_detlogs/ecoli_2015_2018_detmodel_finetuned_setumg.json"]
+plot_comparative_histograms(avg_file, eval_log_files, ["Last two Layer Bayesian", "Deterministic"], specie = "E. coli", output_dir="Results/UMG_results/figures")
+
+avg_file = "Results/UMG_results/kp_lasttwolayer_bayesian/combined_metrics.json"
+eval_log_files = ["Results/UMG_results/kp_detlogs/kp_2015_2018_detmodel_finetuned_setumg.json"]
+plot_comparative_histograms(avg_file, eval_log_files, ["Last two Layer Bayesian", "Deterministic"], specie = "K. pneumoniae", output_dir="Results/UMG_results/figures")
+
+avg_file = "Results/UMG_results/sa_lasttwolayer_bayesian/combined_metrics.json"
+eval_log_files = ["Results/UMG_results/sa_detlogs/sa_2015_2018_detmodel_zeroshot_setUMG.json"]
+plot_comparative_histograms(avg_file, eval_log_files, ["Last two Layer Bayesian", "Deterministic"], specie = "S. aureus", output_dir="Results/UMG_results/figures")
+
+
+plot_uncertainty_distributions("Results/UMG_results/ec_lasttwolayer_bayesian/ecoli_2015_2018_lasttwolayerbayes_setumg_finetuned_run5.json", specie = "E. coli", output_dir="Results/UMG_results/uncertainty_plots")
+
+plot_uncertainty_distributions("Results/UMG_results/kp_lasttwolayer_bayesian/kp_2015_2018_lasttwolayerbayes_setumg_finetuned_run5.json", specie = "K. pneumoniae", output_dir="Results/UMG_results/uncertainty_plots")
+
+plot_uncertainty_distributions("Results/UMG_results/sa_lasttwolayer_bayesian/sa_2015_2018_lasttwolayerbayesmodel_zeroshot_setUMG_run5.json", specie = "S. aureus",output_dir="Results/UMG_results/uncertainty_plots")
+
+

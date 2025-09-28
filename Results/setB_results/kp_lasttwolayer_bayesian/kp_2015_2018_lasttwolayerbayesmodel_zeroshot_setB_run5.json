@@ -2708,11 +2708,11 @@
                 "label": "Cefepime",
                 "mean_variance": 0.04496731609106064,
                 "variance_of_variance": 0.0011994499946013093,
-                "tp_mean_uncertainty": NaN,
+                "tp_mean_uncertainty": -1,
                 "tn_mean_uncertainty": 0.04119393974542618,
                 "fp_mean_uncertainty": 0.06956779956817627,
                 "fn_mean_uncertainty": 0.027089152485132217,
-                "tp_std_uncertainty": NaN,
+                "tp_std_uncertainty": -1,
                 "tn_std_uncertainty": 0.03261832147836685,
                 "fp_std_uncertainty": 0.028355583548545837,
                 "fn_std_uncertainty": 0.03552258759737015
@@ -2728,13 +2728,13 @@
                 "label": "Meropenem",
                 "mean_variance": 0.008641737513244152,
                 "variance_of_variance": 0.00015487837663386017,
-                "tp_mean_uncertainty": NaN,
+                "tp_mean_uncertainty": -1,
                 "tn_mean_uncertainty": 0.008697370998561382,
-                "fp_mean_uncertainty": NaN,
+                "fp_mean_uncertainty": -1,
                 "fn_mean_uncertainty": 0.0005192926037125289,
-                "tp_std_uncertainty": NaN,
+                "tp_std_uncertainty": -1,
                 "tn_std_uncertainty": 0.012469330802559853,
-                "fp_std_uncertainty": NaN,
+                "fp_std_uncertainty": -1,
                 "fn_std_uncertainty": 0.0
             }
         }
