@@ -4476,11 +4476,11 @@
                 "label": "Fusidic acid",
                 "mean_variance": 0.035850875079631805,
                 "variance_of_variance": 0.001962614245712757,
-                "tp_mean_uncertainty": NaN,
+                "tp_mean_uncertainty": -1,
                 "tn_mean_uncertainty": 0.03480276092886925,
                 "fp_mean_uncertainty": 0.1208963543176651,
                 "fn_mean_uncertainty": 0.03959944471716881,
-                "tp_std_uncertainty": NaN,
+                "tp_std_uncertainty": -1,
                 "tn_std_uncertainty": 0.043675102293491364,
                 "fp_std_uncertainty": 0.022472191601991653,
                 "fn_std_uncertainty": 0.04522828757762909
