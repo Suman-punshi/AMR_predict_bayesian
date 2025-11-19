@@ -108,14 +108,14 @@ aggregate_eval_logs("Results/UMG_results/kp_lasttwolayer_bayesian", "Results/UMG
 # average sa set a
 aggregate_eval_logs("Results/SetA_results/sa_lasttwolayer_bayesian", "Results/SetA_results/sa_lasttwolayer_bayesian", output_file="combined_metrics.json")
 
-# average sa set b
-aggregate_eval_logs("Results/SetB_results/sa_lasttwolayer_bayesian", "Results/SetB_results/sa_lasttwolayer_bayesian", output_file="combined_metrics.json")
+# # average sa set b
+# aggregate_eval_logs("Results/SetB_results/sa_lasttwolayer_bayesian", "Results/SetB_results/sa_lasttwolayer_bayesian", output_file="combined_metrics.json")
 
-# average sa set c
-aggregate_eval_logs("Results/SetC_results/sa_lasttwolayer_bayesian", "Results/SetC_results/sa_lasttwolayer_bayesian", output_file="combined_metrics.json")
+# # average sa set c
+# aggregate_eval_logs("Results/SetC_results/sa_lasttwolayer_bayesian", "Results/SetC_results/sa_lasttwolayer_bayesian", output_file="combined_metrics.json")
 
-# average sa set D
-aggregate_eval_logs("Results/SetD_results/sa_lasttwolayer_bayesian", "Results/SetD_results/sa_lasttwolayer_bayesian", output_file="combined_metrics.json")
+# # average sa set D
+# aggregate_eval_logs("Results/SetD_results/sa_lasttwolayer_bayesian", "Results/SetD_results/sa_lasttwolayer_bayesian", output_file="combined_metrics.json")
 
-# average sa set D
-aggregate_eval_logs("Results/UMG_results/sa_lasttwolayer_bayesian", "Results/UMG_results/sa_lasttwolayer_bayesian", output_file="combined_metrics.json")
+# # average sa set D
+# aggregate_eval_logs("Results/UMG_results/sa_lasttwolayer_bayesian", "Results/UMG_results/sa_lasttwolayer_bayesian", output_file="combined_metrics.json")
