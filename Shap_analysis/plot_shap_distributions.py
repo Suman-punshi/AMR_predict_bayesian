@@ -68,6 +68,81 @@ def plot_shap_distributions_from_json(
 
 
 
+def plot_shap_six_panel(
+    species_label_mapping_json_paths,
+    species_names,
+    antibiotics_of_interest,
+    output_path="shap_6panel.png",
+    figure_width_mm=170,   # full-page width
+    figure_height_mm=225,  # full-page height
+    dpi=300
+):
+    """
+    Creates a 6-panel SHAP summary figure (2 columns x 3 rows) for selected antibiotics across species.
+
+    Args:
+        species_label_mapping_json_paths (dict): dict with species as keys and dict with 'json_path' and 'label_mapping'
+        species_names (list): list of species in order to plot
+        antibiotics_of_interest (list of tuples): [(species, antibiotic_name), ...] for the 6 panels
+        output_path (str): path to save the figure
+        figure_width_mm (float): figure width in mm
+        figure_height_mm (float): figure height in mm
+        dpi (int): resolution in dpi
+    """
+    # Convert mm → inches
+    fig_width_in = figure_width_mm / 25.4
+    fig_height_in = figure_height_mm / 25.4
+
+    fig, axes = plt.subplots(3, 2, figsize=(fig_width_in, fig_height_in))
+    axes = axes.flatten()
+
+    for i, (species, antibiotic_name) in enumerate(antibiotics_of_interest):
+        json_path = species_label_mapping_json_paths[species]['json_path']
+        label_mapping = species_label_mapping_json_paths[species]['label_mapping']
+
+        # Load JSON data
+        with open(json_path, "r") as f:
+            shap_data = json.load(f)
+
+        # Find the corresponding label key for the antibiotic
+        label_key = None
+        for k, v in label_mapping.items():
+            if v.lower() == antibiotic_name.lower():
+                label_key = k
+                break
+        if label_key is None:
+            raise ValueError(f"{antibiotic_name} not found in label mapping for {species}!")
+
+        val_dict = shap_data[label_key]
+        resistant = np.array(val_dict["resistant_mean"])
+        susceptible = np.array(val_dict["susceptible_mean"])
+        bins = np.arange(len(resistant))
+
+        ax = axes[i]
+
+        # Color-invariant: use dashed lines for susceptible, solid lines for resistant
+        ax.plot(bins, susceptible, linestyle='--', color='black', linewidth=1, label="Susceptible")
+        ax.plot(bins, resistant, linestyle='-', color='black', linewidth=1, label="Resistant")
+
+        ax.set_title(f"{species} - {antibiotic_name}", fontsize=10, fontweight='bold')
+        ax.set_xlabel("m/z Bin Index", fontsize=8)
+        ax.set_ylabel("Mean SHAP Value", fontsize=8)
+        ax.grid(True, linewidth=0.25)
+        ax.tick_params(axis='both', which='major', labelsize=7)
+
+    # Add a single legend in top-right
+    handles, labels_ = axes[0].get_legend_handles_labels()
+
+
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=dpi, bbox_inches='tight')
+    plt.close(fig)
+    print(f"Saved: {output_path}")
+
+
+
+
+
 mapping_ec = {"label_0": "Ciprofloxacin", 
               "label_1": "Ceftriaxone", 
               "label_2": "Piperacillin-Tazobactam",
@@ -116,3 +191,13 @@ plot_shap_distributions_from_json(
     output_label_prefix="sa_", 
     show=False
 )
+
+
+antibiotics_of_interest = [
+    ("E. coli", "Ceftriaxone"),
+    ("E. coli", "Cefepime"),
+    ("Kp", "Ceftriaxone"),
+    ("Kp", "Cefepime"),
+    ("Sa", "Ceftriaxone"),
+    ("Sa", "Oxacillin"),
+]
