@@ -13,6 +13,7 @@ def plot_shap_distributions_from_json(
     json_path="shap_summary.json",
     output_dir="dir",   
     output_label_prefix="label_",
+    specie_name = "K. pneumoniae",
     show=True,
     figure_width_mm=170,  
     figure_height_mm=80, 
@@ -22,9 +23,9 @@ def plot_shap_distributions_from_json(
     figure_width = figure_width_mm / 25.4
     figure_height = figure_height_mm / 25.4
 
-    # Ensure directory exists
-    if not os.path.isdir(output_dir):
-        raise ValueError(f"Output directory {output_dir} does not exist!")
+    # Ensure directory exists; if not, create it
+    os.makedirs(output_dir, exist_ok=True)
+
 
     # Load the SHAP summary JSON
     with open(json_path, "r") as f:
@@ -45,7 +46,7 @@ def plot_shap_distributions_from_json(
         plt.plot(bins, susceptible, label="Susceptible", color='blue', linewidth=1)
         plt.xlabel("m/z Bin Index", fontsize=10)
         plt.ylabel("Mean SHAP Value", fontsize=10)
-        plt.title(f"{antibiotic_name}", fontsize=11)   # use antibiotic name
+        plt.title(f"{specie_name}-{antibiotic_name}", fontsize=11)   # use antibiotic name
         plt.legend(fontsize=9)
         plt.grid(True, linewidth=0.3)
         plt.tight_layout()
@@ -70,9 +71,8 @@ def plot_shap_distributions_from_json(
 
 def plot_shap_six_panel(
     species_label_mapping_json_paths,
-    species_names,
     antibiotics_of_interest,
-    output_path="shap_6panel.png",
+    output_dir="dir",
     figure_width_mm=170,   # full-page width
     figure_height_mm=225,  # full-page height
     dpi=300
@@ -82,13 +82,15 @@ def plot_shap_six_panel(
 
     Args:
         species_label_mapping_json_paths (dict): dict with species as keys and dict with 'json_path' and 'label_mapping'
-        species_names (list): list of species in order to plot
         antibiotics_of_interest (list of tuples): [(species, antibiotic_name), ...] for the 6 panels
         output_path (str): path to save the figure
         figure_width_mm (float): figure width in mm
         figure_height_mm (float): figure height in mm
         dpi (int): resolution in dpi
     """
+
+    # Ensure directory exists; if not, create it
+    os.makedirs(output_dir, exist_ok=True)
     # Convert mm → inches
     fig_width_in = figure_width_mm / 25.4
     fig_height_in = figure_height_mm / 25.4
@@ -121,8 +123,9 @@ def plot_shap_six_panel(
         ax = axes[i]
 
         # Color-invariant: use dashed lines for susceptible, solid lines for resistant
-        ax.plot(bins, susceptible, linestyle='--', color='black', linewidth=1, label="Susceptible")
-        ax.plot(bins, resistant, linestyle='-', color='black', linewidth=1, label="Resistant")
+        ax.plot(bins, resistant, color='red', linewidth=1, label="Resistant")
+        ax.plot(bins, susceptible, color='blue', linewidth=1, label="Susceptible")
+    
 
         ax.set_title(f"{species} - {antibiotic_name}", fontsize=10, fontweight='bold')
         ax.set_xlabel("m/z Bin Index", fontsize=8)
@@ -133,11 +136,11 @@ def plot_shap_six_panel(
     # Add a single legend in top-right
     handles, labels_ = axes[0].get_legend_handles_labels()
 
-
+    out_path = os.path.join(output_dir, f"SHAP_6PANEL.png")
     plt.tight_layout()
-    plt.savefig(output_path, dpi=dpi, bbox_inches='tight')
+    plt.savefig(out_path, dpi=dpi, bbox_inches='tight')
     plt.close(fig)
-    print(f"Saved: {output_path}")
+    print(f"Saved: {out_path}")
 
 
 
@@ -193,11 +196,24 @@ plot_shap_distributions_from_json(
 )
 
 
+
+species_label_mapping_json_paths = {
+    "E. coli": {"json_path": "Shap_analysis\shap_summary_ecoli.json", "label_mapping": mapping_ec},
+    "K. pneumoniae": {"json_path": "Shap_analysis\shap_summary_kp.json", "label_mapping": mapping_kp},
+    "S. aureus": {"json_path": "Shap_analysis/shap_summary_sa.json", "label_mapping": mapping_sa},
+}
+
 antibiotics_of_interest = [
     ("E. coli", "Ceftriaxone"),
     ("E. coli", "Cefepime"),
-    ("Kp", "Ceftriaxone"),
-    ("Kp", "Cefepime"),
-    ("Sa", "Ceftriaxone"),
-    ("Sa", "Oxacillin"),
+    ("K. pneumoniae", "Ceftriaxone"),
+    ("K. pneumoniae", "Cefepime"),
+    ("S. aureus", "Ceftriaxone"),
+    ("S. aureus", "Oxacillin"),
 ]
+
+plot_shap_six_panel(
+    species_label_mapping_json_paths=species_label_mapping_json_paths,
+    antibiotics_of_interest=antibiotics_of_interest,
+    output_dir="Shap_analysis/shap_plots"
+)
