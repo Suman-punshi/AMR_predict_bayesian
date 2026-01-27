@@ -51,6 +51,8 @@ All of the following notebooks are available in the Kaggle collection *https://w
 - e-coli-2015-2018-detmodel-setac.ipynb -> Fine-tuning of deterministic and Bayesian model on set C
 - ecoli-2015-2018-setad.ipynb -> Fine-tuning of deterministic and Bayesian model on set D
 - ecoli-2015-2018-ftp-a-umg.ipynb -> Fine-tuning of deterministic and Bayesian model on MS-UMG
+- ecoli-2015-2018--umg-driams.ipynb -> Training the model from scratch on UMG and testing on DRIAMS test sets
+
 
 
 ## S. aureus Experiments (Saureus_notebooks/)
