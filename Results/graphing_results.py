@@ -26,7 +26,7 @@ def plot_comparative_histograms(avg_file, eval_log_files, model_names, specie, d
             eval_logs.append(json.load(f))
 
     # Only two styles: solid & hatched
-    facecolors = ["0.6", "white"]     # gray, white
+    facecolors = ["#ff7f0e", "#1f77b4"]    # gray, white
     hatches = ["", "///"]             # plain, hatched
 
     # Labels (per-class metrics; skip mean_metrics)
@@ -75,16 +75,18 @@ def plot_comparative_histograms(avg_file, eval_log_files, model_names, specie, d
 
         for i in range(len(model_names)):
             ax.bar(
-                x + i * width - (len(model_names)-1)/2 * width,
-                means[i],
-                width=width,
-                yerr=errors[i] if i == 0 else None,
-                capsize=2,
-                hatch=hatches[i % 2],
-                edgecolor="black",
-                facecolor=facecolors[i % 2],
-                linewidth=0.8
+            x + i * width - (len(model_names)-1)/2 * width,
+            means[i],
+            width=width,
+            yerr=errors[i] if i == 0 else None,
+            capsize=2,
+            hatch=hatches[i % 2],
+            edgecolor="black",
+            facecolor=facecolors[i % 2],
+            linewidth=0.8
             )
+
+
 
         ax.set_title(f"{specie} - {label}", fontsize=9, weight="bold", pad=5)
         ax.set_xticks(x)
@@ -141,7 +143,7 @@ def plot_paper_figure_four_panel(avg_file, eval_log_files, model_names, antibiot
 
 
     # Two consistent bar styles
-    facecolors = ["0.6", "white"]
+    facecolors = ["#ff7f0e", "#1f77b4"]
     hatches    = ["", "///"]
 
     fig, axes = plt.subplots(2, 2, figsize=(6.7, 6.0), dpi=300)
@@ -176,16 +178,16 @@ def plot_paper_figure_four_panel(avg_file, eval_log_files, model_names, antibiot
 
         for i in range(len(model_names)):
             ax.bar(
-                x + i * width - (len(model_names)-1)/2 * width,
-                model_matrix[i],
-                width=width,
-                hatch=hatches[i % 2],
-                edgecolor="black",
-                facecolor=facecolors[i % 2],
-                linewidth=0.8,
-                yerr=model_errors[i] if i == 0 else None,
-                capsize=2
-            )
+            x + i * width - (len(model_names)-1)/2 * width,
+            model_matrix[i],
+            width=width,
+            hatch=hatches[i % 2],
+            edgecolor="black",
+            facecolor=facecolors[i % 2],
+            linewidth=0.8,
+            yerr=model_errors[i] if i == 0 else None,
+            capsize=2
+        )
 
         ax.set_title(f"E. coli – {drug}", fontsize=8, weight = "bold")
         ax.set_xticks(x)
@@ -220,6 +222,12 @@ def plot_uncertainty_distributions(log_file, specie, dataset, output_dir="uncert
 
     # B/W-friendly line styles
     line_styles = {"TP": "solid", "TN": "dashed", "FP": "dotted", "FN": "dashdot"}
+    colors = {
+    "TN": "#1f77b4",   # blue
+    "TP": "#2ca02c",   # green
+    "FN": "#ff7f0e",   # orange
+    "FP": "#d62728",   # red
+    }
 
     for entry in metrics:
         label = entry["label"]
@@ -246,7 +254,7 @@ def plot_uncertainty_distributions(log_file, specie, dataset, output_dir="uncert
             if std == 0 or np.isnan(mean) or np.isnan(std):
                 continue
             y = norm.pdf(x, mean, std)
-            ax.plot(x, y, linestyle=line_styles[group], linewidth=1.5, color="black")
+            ax.plot(x, y, linestyle=line_styles[group], linewidth=1.5, color=colors[group])
 
         ax.set_title(f"{specie} – {label}", fontsize=10, weight="bold")
         ax.set_xlabel("Uncertainty", fontsize=9)
@@ -281,7 +289,12 @@ def plot_uncertainty_four_panel(log_file, specie, dataset, labels_to_plot, outpu
     os.makedirs(output_dir, exist_ok=True)
 
     line_styles = {"TP": "solid", "TN": "dashed", "FP": "dotted", "FN": "dashdot"}
-
+    colors = {
+    "TN": "#1f77b4",   # blue
+    "TP": "#2ca02c",   # green
+    "FN": "#ff7f0e",   # orange
+    "FP": "#d62728",   # red
+    }
 
     fig, axes = plt.subplots(2, 2, figsize=(6.7, 6.0), dpi=300)
     axes = axes.flatten()
@@ -311,7 +324,7 @@ def plot_uncertainty_four_panel(log_file, specie, dataset, labels_to_plot, outpu
             if std == 0 or np.isnan(mean) or np.isnan(std):
                 continue
             y = norm.pdf(x, mean, std)
-            ax.plot(x, y, linestyle=line_styles[group], linewidth=1.5, color="black")
+            ax.plot(x, y, linestyle=line_styles[group], linewidth=1.5, color=colors[group])
 
         ax.set_title(f"{specie} – {label}", fontsize=8, weight="bold")
         ax.set_xlabel("Uncertainty", fontsize=7)

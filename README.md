@@ -39,7 +39,7 @@ python Binning_DRIAMS_UMG.py
 
 # 2. Training and Evaluation
 
-The project contains three main experiment folders, one for each species.
+The project contains two main experiment folders, one for each species.
 
 ## E. coli Experiments (Ecoli_notebooks/)
 All of the following notebooks are available in the Kaggle collection *https://www.kaggle.com/work/collections/16594503*. For exact reproducibility, we recommend forking the notebooks directly on Kaggle and running them there.
@@ -52,16 +52,6 @@ All of the following notebooks are available in the Kaggle collection *https://w
 - ecoli-2015-2018-setad.ipynb -> Fine-tuning of deterministic and Bayesian model on set D
 - ecoli-2015-2018-ftp-a-umg.ipynb -> Fine-tuning of deterministic and Bayesian model on MS-UMG
 
-
-## K. pneumoniae Experiments ( Kpneumoniae_notebooks/)
-All of the following notebooks are available in the Kaggle collection *https://www.kaggle.com/work/collections/16595021*. For exact reproducibility, we recommend forking the notebooks directly on Kaggle and running them there.
-
-- kp-2015-2018-detmodel-seta.ipynb -> Training and testing deterministic model on set A
-- kp-2015-2018-lastlayersbayes-seta.ipynb -> Training and testing Bayesian model with last layers made bayesian on set A
-- kp-2015-2018-lasttwolayersbayes-seta.ipynb -> Training and testing Bayesian model with last two layers made bayesian on set A
-- kp-2015-2018-setab.ipynb -> Zero-shot testing of deterministic and Bayesian Model on set B
-- kp-2015-2018-ad.ipynb -> Fine-tuning of deterministic and Bayesian model on set D
-- kp-2015-2018-ftp-a-umg.ipynb -> Fine-tuning of deterministic and Bayesian model on MS-UMG
 
 ## S. aureus Experiments (Saureus_notebooks/)
 All of the following notebooks are available in the Kaggle collection *https://www.kaggle.com/work/collections/16595142*. For exact reproducibility, we recommend forking the notebooks directly on Kaggle and running them there.

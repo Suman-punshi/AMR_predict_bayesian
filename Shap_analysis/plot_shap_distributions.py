@@ -74,7 +74,7 @@ def plot_shap_six_panel(
     antibiotics_of_interest,
     output_dir="dir",
     figure_width_mm=170,   # full-page width
-    figure_height_mm=225,  # full-page height
+    figure_height_mm=150,  # full-page height
     dpi=300
 ):
     """
@@ -95,7 +95,7 @@ def plot_shap_six_panel(
     fig_width_in = figure_width_mm / 25.4
     fig_height_in = figure_height_mm / 25.4
 
-    fig, axes = plt.subplots(3, 2, figsize=(fig_width_in, fig_height_in))
+    fig, axes = plt.subplots(2, 2, figsize=(fig_width_in, fig_height_in))
     axes = axes.flatten()
 
     for i, (species, antibiotic_name) in enumerate(antibiotics_of_interest):
@@ -136,7 +136,7 @@ def plot_shap_six_panel(
     # Add a single legend in top-right
     handles, labels_ = axes[0].get_legend_handles_labels()
 
-    out_path = os.path.join(output_dir, f"SHAP_6PANEL.png")
+    out_path = os.path.join(output_dir, f"SHAP_4PANEL.png")
     plt.tight_layout()
     plt.savefig(out_path, dpi=dpi, bbox_inches='tight')
     plt.close(fig)
@@ -199,15 +199,12 @@ plot_shap_distributions_from_json(
 
 species_label_mapping_json_paths = {
     "E. coli": {"json_path": "Shap_analysis\shap_summary_ecoli.json", "label_mapping": mapping_ec},
-    "K. pneumoniae": {"json_path": "Shap_analysis\shap_summary_kp.json", "label_mapping": mapping_kp},
     "S. aureus": {"json_path": "Shap_analysis/shap_summary_sa.json", "label_mapping": mapping_sa},
 }
 
 antibiotics_of_interest = [
     ("E. coli", "Ceftriaxone"),
     ("E. coli", "Cefepime"),
-    ("K. pneumoniae", "Ceftriaxone"),
-    ("K. pneumoniae", "Cefepime"),
     ("S. aureus", "Ceftriaxone"),
     ("S. aureus", "Oxacillin"),
 ]
