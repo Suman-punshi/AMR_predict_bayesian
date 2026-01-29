@@ -42,29 +42,57 @@ python Binning_DRIAMS_UMG.py
 The project contains two main experiment folders, one for each species.
 
 ## E. coli Experiments (Ecoli_notebooks/)
-All of the following notebooks are available in the Kaggle collection *https://www.kaggle.com/work/collections/16594503*. For exact reproducibility, we recommend forking the notebooks directly on Kaggle and running them there.
+All of the following notebooks are available through Kaggle. For exact reproducibility, we recommend forking the notebooks directly on Kaggle and running them there.
 
 - ecoli-2015-2018-detmodel-seta.ipynb -> Training and testing deterministic model on set A
+Kaggle Link: https://www.kaggle.com/code/simplifiedscience/ecoli-2015-2018-detmodel-seta
+
 - ecoli-2015-2018-lastlayerbayes-seta.ipynb -> Training and testing Bayesian model with last layers made bayesian on set A
+Kaggle Link: https://www.kaggle.com/code/simplifiedscience/ecoli-2015-2018-lastlayerbayes-seta
+
 - ecoli-2015-2018-lasttwolayersbayes-seta.ipynb -> Training and testing Bayesian model with last two layers made bayesian on set A
+Kaggle Link: https://www.kaggle.com/code/simplifiedscience/ecoli-2015-2018-lasttwolayersbayes-seta
+
 - ecoli-2015-2018-detmodel-setab.ipynb -> Zero-shot testing of deterministic and Bayesian Model on set B
+Kaggle Link: https://www.kaggle.com/code/simplifiedscience/ecoli-2015-2018-setab
+
 - e-coli-2015-2018-detmodel-setac.ipynb -> Fine-tuning of deterministic and Bayesian model on set C
+Kaggle Link: https://www.kaggle.com/code/simplifiedscience/ecoli-2015-2018-setac
+
 - ecoli-2015-2018-setad.ipynb -> Fine-tuning of deterministic and Bayesian model on set D
+Kaggle Link: https://www.kaggle.com/code/simplifiedscience/ecoli-2015-2018-setad
+
 - ecoli-2015-2018-ftp-a-umg.ipynb -> Fine-tuning of deterministic and Bayesian model on MS-UMG
+Kaggle Link: https://www.kaggle.com/code/simplifiedscience/ecoli-2015-2018-ftp-a-umg
+
 - ecoli-2015-2018--umg-driams.ipynb -> Training the model from scratch on UMG and testing on DRIAMS test sets
+Kaggle Link: https://www.kaggle.com/code/simplifiedscience/ecoli-2015-2018-umg-driams
 
 
 
 ## S. aureus Experiments (Saureus_notebooks/)
-All of the following notebooks are available in the Kaggle collection *https://www.kaggle.com/work/collections/16595142*. For exact reproducibility, we recommend forking the notebooks directly on Kaggle and running them there.
+All of the following notebooks are available through Kaggle. For exact reproducibility, we recommend forking the notebooks directly on Kaggle and running them there.
 
 - saureus-2015-2018-detmodel-seta.ipynb -> Training and testing deterministic model on set A
+Kaggle Link: https://www.kaggle.com/code/simplifiedscience/saureus-2015-2018-detmodel-seta
+
 - saureus-2015-2018-lastlayersbayes-seta.ipynb -> Training and testing Bayesian model with last layers made bayesian on set A
+Kaggle Link: https://www.kaggle.com/code/simplifiedscience/saureus-2015-2018-lastlayersbayes-seta
+
 - saureus-2015-2018-lasttwolayersbayes-seta.ipynb -> Training and testing Bayesian model with last two layers made bayesian on set A
+Kaggle Link: https://www.kaggle.com/code/simplifiedscience/saureus-2015-2018-lasttwolayersbayes-seta
+
 - sa-2015-2018-setab.ipynb -> Zero-shot testing of deterministic and Bayesian Model on set B
+Kaggle Link: https://www.kaggle.com/code/simplifiedscience/sa-2015-2018-setab
+
 - saureus-2015-2018-setac.ipynb -> Fine-tuning of deterministic and Bayesian model on set C
+Kaggle Link: https://www.kaggle.com/code/simplifiedscience/saureus-2015-2018-setac
+
 - sa-2015-2018-setad.ipynb -> Fine-tuning of deterministic and Bayesian model on set D
-- sa-2015-2018-a-umg.ipynb -> Fine-tuning of deterministic and Bayesian model on MS-UMG
+Kaggle Link: https://www.kaggle.com/code/simplifiedscience/sa-2015-2018-setad
+
+- sa-2015-2018-a-umg.ipynb -> Zero-shot testing of deterministic and Bayesian model on MS-UMG
+Kaggle Link: https://www.kaggle.com/code/simplifiedscience/sa-2015-2018-a-umg
 
 To make execution easy, each notebook is fully self-contained and includes all utility functions required for that experiment.
 
@@ -78,7 +106,8 @@ This folder contain four subfolders,
 
 # 4. SHAP Analysis (Shap_analysis/) 
 
-All the notebooks for computing SHAP values are available in kaggle collection *https://www.kaggle.com/work/collections/16612328*. We recommend forking the notebooks directly on Kaggle and running them there.
+All the notebooks for computing SHAP values are available through kaggle collection. We recommend forking the notebooks directly on Kaggle and running them there.
+Kaggle Link: https://www.kaggle.com/code/simplifiedscience/saureus-2015-2018-detmodel-seta-shap
 
 - This folder contains the SHAP logs for each specie, tested on set A.
-- plot_shap_distributions.py plot the shap values from the SHAP logs file
+- plot_shap_distributions.py plot the shap values from the SHAP logs file.
