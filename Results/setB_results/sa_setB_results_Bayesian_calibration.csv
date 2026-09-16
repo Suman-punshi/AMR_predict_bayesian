@@ -1,0 +1,5 @@
+Species,Set,Model,Label,Brier Score,ECE
+sa,setB_results,Bayesian,Ciprofloxacin,0.1120588546823121,0.16331466978488945
+sa,setB_results,Bayesian,Fusidic acid,0.054402302707141345,0.05409340526594585
+sa,setB_results,Bayesian,Oxacillin,0.2918892340645036,0.40375683781133176
+sa,setB_results,Bayesian,Clindamycin,0.11666356354654353,0.14471675764070824

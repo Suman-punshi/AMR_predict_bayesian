@@ -1,0 +1,4 @@
+Species,Set,Model,Label,Brier Score,ECE
+sa,setUMG_results,Bayesian,Fusidic acid,0.09333721039259163,0.041663723991304226
+sa,setUMG_results,Bayesian,Oxacillin,0.30363508841322606,0.42895159693675894
+sa,setUMG_results,Bayesian,Clindamycin,0.1804567358606634,0.1327389596544186

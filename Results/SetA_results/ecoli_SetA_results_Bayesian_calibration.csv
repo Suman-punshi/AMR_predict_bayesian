@@ -1,0 +1,6 @@
+Species,Set,Model,Label,Brier Score,ECE
+ecoli,SetA_results,Bayesian,Ciprofloxacin,0.14323258530639998,0.04602886324774489
+ecoli,SetA_results,Bayesian,Ceftriaxone,0.07627584371351154,0.030186372131444435
+ecoli,SetA_results,Bayesian,Piperacillin-Tazobactam,0.06271490294363348,0.03814440435385693
+ecoli,SetA_results,Bayesian,Cefepime,0.07571854821644385,0.02525277975934747
+ecoli,SetA_results,Bayesian,Tobramycin,0.10089732830848827,0.04882404370662949

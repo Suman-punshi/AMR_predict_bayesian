@@ -1,0 +1,4 @@
+Species,Set,Model,Label,Brier Score,ECE
+sa,setUMG_results,Deterministic,Fusidic acid,0.10393277723368917,0.074593601363089
+sa,setUMG_results,Deterministic,Oxacillin,0.32472767667229807,0.4184982631326518
+sa,setUMG_results,Deterministic,Clindamycin,0.19059328468430567,0.15302519436813733

@@ -161,23 +161,6 @@ plot_shap_distributions_from_json(
     show=False
 )
 
-
-mapping_kp = {"label_0": "Ciprofloxacin", 
-              "label_1": "Ceftriaxone", 
-              "label_2": "Cefepime",
-              "label_3": "Meropenem",
-              "label_4": "Tobramycin"}
-
-
-# kp --- set A
-plot_shap_distributions_from_json(
-    label_mapping=mapping_kp,
-    json_path="Shap_analysis/shap_summary_kp.json",
-    output_dir="Shap_analysis/shap_plots",  
-    output_label_prefix="kp_",
-    show=False
-)
-
 mapping_sa = {"label_0": "Ciprofloxacine", 
               "label_1": "Fusidic Acid", 
               "label_2": "Oxacillin",
